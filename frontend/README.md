@@ -53,7 +53,7 @@ The Task Manager app allows users to manage their tasks efficiently with feature
 1. Clone the repo:
 
    ```bash
-   git clone <url>
+   git clone https://github.com/Srihari-Bandugula/Task-Manager-Application
    cd task-manager
    ```
 
