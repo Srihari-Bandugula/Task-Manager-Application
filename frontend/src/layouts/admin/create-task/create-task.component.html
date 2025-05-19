@@ -1,0 +1,52 @@
+<div class="form-container">
+  <h2 class="text-xl font-medium">{{ taskId ? 'Update Task' : 'Create Task' }}</h2>
+
+  <form [formGroup]="taskForm">
+    <div class="form-group">
+      <label for="title">Task Title</label>
+      <input id="title" formControlName="title" type="text" class="form-control" placeholder="Task Title">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control" placeholder="Describe Task"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <app-select-dropdown [options]="priorityOptions" formControlName="priority"></app-select-dropdown>
+    </div>
+
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input id="dueDate" formControlName="dueDate" type="date" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="assignedTo">Assign To</label>
+      <app-select-users  formControlName="assignedTo"></app-select-users>
+    </div>
+
+    <div class="form-group">
+      <label for="todoChecklist">TODO Checklist</label>
+      <app-todo-list
+  formControlName="todoChecklist"
+  [creationMode]="true">
+</app-todo-list>
+
+    </div>
+
+    <div class="form-group">
+      <label for="attachments">Attachments</label>
+      <app-attachments formControlName="attachments"></app-attachments>
+    </div>
+
+    <div *ngIf="error" class="text-red-500">{{ error }}</div>
+
+    <div class="form-group text-right">
+      <button type="button" (click)="handleSubmit()" [disabled]="taskForm.invalid || loading" class="btn btn-primary">
+        {{ taskId ? 'Update Task' : 'Create Task' }}
+      </button>
+    </div>
+  </form>
+</div>

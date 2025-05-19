@@ -1,0 +1,101 @@
+/* User Card Container */
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 420px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* User Info Section */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-icon {
+  width: 56px;
+  height: 56px;
+  font-size: 56px; /* Match width/height for visual size */
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0; /* optional background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details .name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.details .email {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Status Cards Section */
+.status-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.status-card {
+  flex: 1;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease-in-out;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+}
+
+.status-card .count {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.status-card .label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Color Class for Status */
+.status-card.pending {
+  background-color: #fb8c00; /* Orange for Pending */
+}
+
+.status-card.in-progress {
+  background-color: #fdd835; /* Yellow for In Progress */
+  color: #000;
+}
+
+.status-card.completed {
+  background-color: #43a047; /* Green for Completed */
+}

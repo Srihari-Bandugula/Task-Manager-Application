@@ -1,0 +1,94 @@
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  // background-color: #3f51b5; /* Optional: fallback if mat-toolbar color doesn't apply */
+  // color: white;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Spacer to push content to the right */
+.spacer {
+  flex-grow: 1;
+}
+
+/* Right-side button container */
+.right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Spacing between buttons */
+.right-buttons button {
+  margin-left: 16px;
+}
+
+/* Profile icon button */
+.right-buttons mat-icon-button {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+}
+
+/* Profile image in icon button */
+.profile-image-button {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Enlarged profile image (optional toggle) */
+.profile-image.enlarged {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Default profile image */
+.profile-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Profile card styling */
+.profile-card {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* Clickable avatar inside card */
+.profile-card .profile-avatar {
+  cursor: pointer;
+}
+
+/* Admin chip style */
+.admin-chip {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Main routed view area */
+.main-content {
+  padding: 1.5rem;
+}

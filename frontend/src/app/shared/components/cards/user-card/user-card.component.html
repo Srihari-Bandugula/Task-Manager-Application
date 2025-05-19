@@ -1,0 +1,42 @@
+<div class="user-card">
+  <div class="user-info">
+    <!-- Profile Image or Fallback Icon -->
+    <ng-container *ngIf="userInfo?.profileImageUrl; else fallbackIcon">
+      <img
+        [src]="userInfo?.profileImageUrl"
+        alt="User Avatar"
+        class="avatar"
+      />
+    </ng-container>
+    <ng-template #fallbackIcon>
+      <mat-icon class="avatar-icon">account_circle</mat-icon>
+    </ng-template>
+
+    <!-- User Details -->
+    <div class="details">
+      <p class="name">{{ userInfo?.name }}</p>
+      <p class="email">{{ userInfo?.email }}</p>
+    </div>
+  </div>
+
+  <!-- Status Cards (Pending, In Progress, Completed) -->
+  <div class="status-cards">
+    <app-status-card
+      [label]="'Pending'"
+      [count]="userInfo?.pendingTasks || 0"
+      [status]="'Pending'"
+    ></app-status-card>
+
+    <app-status-card
+      [label]="'In Progress'"
+      [count]="userInfo?.inProgressTasks || 0"
+      [status]="'In Progress'"
+    ></app-status-card>
+
+    <app-status-card
+      [label]="'Completed'"
+      [count]="userInfo?.completedTasks || 0"
+      [status]="'Completed'"
+    ></app-status-card>
+  </div>
+</div>

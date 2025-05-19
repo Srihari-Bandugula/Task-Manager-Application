@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div>
+    <h2 class="text-xl md:text-2xl">{{ greeting }}, {{ user?.name }}!</h2>
+    <p class="text-xs md:text-[13px] text-gray-400 mt-1.5">
+  {{ today | date: 'fullDate' }}
+</p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-5">
+    <app-info-card label="Total Tasks" [value]="dashboardData?.charts?.taskDistribution?.All || 0" color="bg-primary" />
+    <app-info-card label="Pending Tasks" [value]="dashboardData?.charts?.taskDistribution?.Pending || 0" color="bg-violet-500" />
+    <app-info-card label="In Progress Tasks" [value]="dashboardData?.charts?.taskDistribution?.InProgress || 0" color="bg-cyan-500" />
+    <app-info-card label="Completed Tasks" [value]="dashboardData?.charts?.taskDistribution?.Completed || 0" color="bg-lime-500" />
+  </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4 md:my-6">
+  <div class="card">
+    <h5 class="font-medium">Task Distribution</h5>
+    <app-custom-piechart *ngIf="pieChartData.length > 0" [data]="pieChartData" [colors]="COLORS"></app-custom-piechart>
+
+  </div>
+
+  <div class="card">
+    <h5 class="font-medium">Task Priority Levels</h5>
+    <app-custom-barchart [data]="barChartData"></app-custom-barchart>
+  </div>
+
+  <div class="card md:col-span-2">
+    <div class="flex justify-between items-center">
+      <h5 class="text-lg">Recent Tasks</h5>
+      <button class="card-btn" (click)="onSeeMore()">See All →</button>
+    </div>
+    <app-task-list [tableData]="dashboardData?.recentTasks || []"></app-task-list>
+  </div>
+</div>

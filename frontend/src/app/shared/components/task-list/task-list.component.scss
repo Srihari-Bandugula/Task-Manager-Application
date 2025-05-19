@@ -1,0 +1,139 @@
+/* Wrapper for the table to handle overflow and padding */
+.table-container {
+  overflow-x: auto;
+  padding: 0;
+  border-radius: 8px; /* Equivalent to rounded-lg */
+  margin-top: 12px; /* Equivalent to mt-3 */
+}
+
+/* Table and header styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px 16px; /* Equivalent to spacing between content */
+}
+
+/* Header styles */
+th {
+  background-color: #f4f4f4; /* Light grey background for header */
+  font-weight: bold;
+}
+
+/* Text style for task title cell */
+.task-title {
+  color: #4a4a4a; /* Equivalent to text-gray-700 */
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Status badge styles */
+.status-badge {
+  padding: 4px 8px;
+  font-size: 12px; /* Equivalent to text-xs */
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Priority badge styles */
+.priority-badge {
+  padding: 4px 8px;
+  font-size: 12px; /* Equivalent to text-xs */
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Date cell styles */
+.created-date {
+  color: #4a4a4a; /* Equivalent to text-gray-700 */
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* Adjust the row styles */
+mat-row {
+  border-bottom: 1px solid #e0e0e0; /* Light border between rows */
+}
+
+/* Optional - adjust table rows and cells for better readability */
+mat-header-cell,
+mat-cell {
+  padding: 12px;
+}
+
+/* Apply text truncation with ellipsis for overflow */
+.mat-cell {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+/* shared base badge style */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;  /* px-2 py-1 */
+  font-size: 0.75rem;        /* text-xs */
+  border-radius: 0.25rem;    /* rounded */
+  border: 1px solid transparent;
+}
+
+/* ── Status Badge Variants ────────────────────────────────────────── */
+.status-badge-completed {
+  background-color: #d1fae5;       /* green-100 */
+  color: #10b981;                  /* green-500 */
+  border-color: #a7f3d0;           /* green-200 */
+}
+
+.status-badge-pending {
+  background-color: #f3e8ff;       /* purple-100 */
+  color: #a855f7;                  /* purple-500 */
+  border-color: #e9d5ff;           /* purple-200 */
+}
+
+.status-badge-in-progress {
+  background-color: #cffafe;       /* cyan-100 */
+  color: #06b6d4;                  /* cyan-500 */
+  border-color: #bae6fd;           /* cyan-200 */
+}
+
+.status-badge-default {
+  background-color: #f3f4f6;       /* gray-100 */
+  color: #6b7280;                  /* gray-500 */
+  border-color: #e5e7eb;           /* gray-200 */
+}
+
+/* ── Priority Badge Variants ─────────────────────────────────────── */
+.priority-badge-high {
+  background-color: #fee2e2;       /* red-100 */
+  color: #ef4444;                  /* red-500 */
+  border-color: #fecaca;           /* red-200 */
+}
+
+.priority-badge-medium {
+  background-color: #fff7ed;       /* orange-100 */
+  color: #f97316;                  /* orange-500 */
+  border-color: #fed7aa;           /* orange-200 */
+}
+
+.priority-badge-low {
+  background-color: #dcfce7;       /* green-100 */
+  color: #22c55e;                  /* green-500 */
+  border-color: #bbf7d0;           /* green-200 */
+}
+
+.priority-badge-default {
+  background-color: #f3f4f6;       /* gray-100 */
+  color: #6b7280;                  /* gray-500 */
+  border-color: #e5e7eb;           /* gray-200 */
+}

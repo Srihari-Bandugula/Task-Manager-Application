@@ -1,0 +1,25 @@
+<div class="my-2 tabs-container">
+  <div class="tabs flex flex-wrap gap-2">
+    <button
+      *ngFor="let tab of tabs"
+      mat-raised-button
+      color="primary"
+      [matBadge]="tab.count"
+      matBadgePosition="above after"
+      matBadgeSize="small"
+      [ngClass]="{
+        'active-tab': activeTab === tab.label,
+        'inactive-tab': activeTab !== tab.label
+      }"
+      (click)="setActiveTab(tab.label)"
+    >
+      <div class="tab-content relative">
+        <span class="tab-label">{{ tab.label }}</span>
+        <div
+          *ngIf="activeTab === tab.label"
+          class="active-tab-indicator"
+        ></div>
+      </div>
+    </button>
+  </div>
+</div>

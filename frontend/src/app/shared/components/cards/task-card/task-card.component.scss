@@ -1,0 +1,268 @@
+/* Task Card Container */
+.task-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Menu Button (3 Dots) */
+.menu-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 2.5rem;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  width: 11rem;
+  padding: 0.5rem 0;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.menu-dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.menu-dropdown button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Status & Priority Tags */
+.status-tag,
+.priority-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+/* Task Details Section */
+.task-details {
+  margin-top: 0.75rem;
+  border-left: 4px solid #e5e7eb;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.task-details:hover {
+  border-color: #06b6d4;
+}
+
+.task-details p {
+  margin-top: 0.5rem;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.task-details .text-sm {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.task-details .text-xs {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Task Done Info */
+.task-done {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+/* Dates Section */
+.task-dates {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.task-dates label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.task-dates p {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #111827;
+  margin-top: 0.25rem;
+}
+
+/* Attachments & Avatars */
+.task-attachments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+}
+
+.task-attachments .attachment-count {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #eff6ff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  color: #1f2937;
+}
+
+.attachment-icon {
+  color: #3b82f6;
+  font-size: 0.875rem;
+}
+.tag-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.status-tag,
+.priority-tag {
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+/* Status Colors */
+.status-in-progress {
+  color: #06b6d4;           // cyan-500
+  background-color: #ecfeff; // cyan-50
+  border-color: rgba(6, 182, 212, 0.1);
+}
+
+.status-completed {
+  color: #84cc16;           // lime-500
+  background-color: #f7fee7; // lime-50
+  border-color: rgba(132, 204, 22, 0.1);
+}
+
+.status-default {
+  color: #8b5cf6;           // violet-500
+  background-color: #f5f3ff; // violet-50
+  border-color: rgba(139, 92, 246, 0.1);
+}
+
+/* Priority Colors */
+.priority-low {
+  color: #10b981;           // emerald-500
+  background-color: #ecfdf5; // emerald-50
+  border-color: rgba(16, 185, 129, 0.1);
+}
+
+.priority-medium {
+  color: #f59e0b;           // amber-500
+  background-color: #fffbeb; // amber-50
+  border-color: rgba(245, 158, 11, 0.1);
+}
+
+.priority-high {
+  color: #f43f5e;           // rose-500
+  background-color: #fff1f2; // rose-50
+  border-color: rgba(244, 63, 94, 0.1);
+}
+
+
+
+// Optional Mixin for line clamping
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Container
+.task-details {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 16px;
+  transition: border-color 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+// Border Variants
+.border-cyan {
+  border-color: #06b6d4; // cyan-500
+}
+
+.border-indigo {
+  border-color: #6366f1; // indigo-500
+}
+
+.border-violet {
+  border-color: #8b5cf6; // violet-500
+}
+
+// Text Styles
+.task-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937; // gray-800
+  margin-top: 16px;
+  @include line-clamp(2);
+}
+
+.task-desc {
+  font-size: 12px;
+  color: #6b7280; // gray-500
+  margin-top: 6px;
+  line-height: 18px;
+  @include line-clamp(2);
+}
+
+.task-progress {
+  font-size: 13px;
+  color: rgba(55, 65, 81, 0.8); // gray-700/80
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  line-height: 18px;
+}
+
+.done-count {
+  font-weight: 600;
+  color: #374151; // gray-700
+}

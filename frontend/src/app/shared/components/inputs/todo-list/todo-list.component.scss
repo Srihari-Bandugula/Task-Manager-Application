@@ -1,0 +1,141 @@
+/* Todo list container */
+div {
+  padding: 1rem;
+}
+
+/* Todo item container */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Even and odd item background */
+.flex:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.flex:hover {
+  background-color: #e4e7eb;
+}
+
+/* Text styling for Todo item */
+.text-xs {
+  font-size: 0.875rem;
+}
+
+.text-black {
+  color: #111827;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+/* Strike-through for completed items */
+.line-through {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+/* Cursor pointer for clickable items in completion mode */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Button styling for delete */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styling for delete icon */
+button .text-lg {
+  font-size: 1.25rem;
+  color: #ef4444;
+  transition: transform 0.3s ease;
+}
+
+button .text-lg:hover {
+  transform: scale(1.1);
+}
+
+/* Completed button */
+button .text-green-500 {
+  font-size: 1rem;
+  color: #10b981;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+button .text-green-500:hover {
+  transform: scale(1.05);
+}
+
+/* Input container for adding new tasks */
+.flex.items-center.gap-5 {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Input field */
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Input field focus effect */
+input[type="text"]:focus {
+  border-color: #2563eb;
+}
+
+/* Add button */
+.card-btn {
+  padding: 0.75rem 1.25rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.card-btn:active {
+  background-color: #1e40af;
+}
+
+/* Icon inside Add button */
+.card-btn .text-lg {
+  font-size: 1.25rem;
+}

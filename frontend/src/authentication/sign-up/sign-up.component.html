@@ -1,0 +1,62 @@
+<div class="signup-container">
+  <h1>Task Manager</h1>
+  <h2>Create an Account</h2>
+  <p>Join us today by entering your details below.</p>
+
+    <div class="image-upload-wrapper">
+    <input type="file" id="imageInput" accept="image/*" (change)="onImageSelect($event)" />
+    <label
+      for="imageInput"
+      class="image-preview"
+      [ngStyle]="{ 'background-image': imageUrl ? 'url(' + imageUrl + ')' : 'none' }"
+    >
+      <span *ngIf="!imageUrl">+</span>
+    </label>
+  </div>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div>
+        <label>Full Name</label>
+        <input type="text" formControlName="name" placeholder="Full Name" />
+        <div class="error" *ngIf="name.invalid && (name.dirty || name.touched)">
+          <small *ngIf="name.errors?.['required']">Full Name is required.</small>
+        </div>
+      </div>
+
+      <div>
+        <label>Email Address</label>
+        <input type="email" formControlName="email" placeholder="Email Address" />
+        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small *ngIf="email.errors?.['required']">Email is required.</small>
+          <small *ngIf="email.errors?.['email']">Please enter a valid email address.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Min 8 Characters" />
+        <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <small *ngIf="password.errors?.['required']">Password is required.</small>
+          <small *ngIf="password.errors?.['minlength']">Min 8 characters required.</small>
+        </div>
+      </div>
+
+      <div>
+        <label>Admin Invite Token</label>
+        <input
+          type="text"
+          formControlName="adminInviteToken"
+          placeholder="7 Digit Code"
+          maxlength="7"
+        />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">SIGN UP</button>
+  </form>
+
+  <p>Already have an account? <a routerLink="/login">Login</a></p>
+</div>

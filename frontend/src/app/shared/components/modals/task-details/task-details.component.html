@@ -1,0 +1,21 @@
+
+<app-modal [isOpen]="isOpen" (closeModal)="onCloseModal()" title="Task Details">
+  <div class="space-y-2 text-sm">
+    <p><strong>Title:</strong> {{ task?.title }}</p>
+    <p><strong>Description:</strong> {{ task?.description }}</p>
+    <p><strong>Priority:</strong> {{ task?.priority }}</p>
+    <p><strong>Status:</strong> {{ task?.status }}</p>
+    <p><strong>Due Date:</strong> {{ formatDate(task?.dueDate) }}</p>
+    <p>
+      <strong>Progress:</strong> {{ task?.completedTodoCount }}/{{
+        task?.todoChecklist?.length || 0
+      }}
+    </p>
+    <p><strong>Assigned To:</strong></p>
+    <ul class="pl-4 list-disc">
+      <li *ngFor="let user of task?.assignedTo">
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+</app-modal>

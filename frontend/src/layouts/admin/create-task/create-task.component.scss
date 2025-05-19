@@ -1,0 +1,75 @@
+/* Form Container */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Form Controls */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Textarea */
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Buttons */
+.btn-submit {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 10px;
+}
+
+/* Right-aligned Submit Button */
+.text-right {
+  text-align: right;
+}
+
+/* Optional: styling for form labels */
+label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: inline-block;
+}

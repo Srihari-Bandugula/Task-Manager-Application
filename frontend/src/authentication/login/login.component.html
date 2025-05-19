@@ -1,0 +1,30 @@
+<div class="login-container">
+    <h1>Task Manager</h1>
+    <h2>Welcome Back</h2>
+    <p>Please enter your details to Login</p>
+  
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>Email Address</label>
+      <input type="email" formControlName="email" placeholder="Email Address" />
+      <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Please enter a valid email address.</small>
+      </div>
+  
+      <label>Password</label>
+      <input type="password"
+        formControlName="password"
+        placeholder="Min 8 Characters"
+      />
+      <!-- <button type="button" class="eye" (click)="hidePassword = !hidePassword"></button> -->
+      <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <small *ngIf="password.errors?.['required']">Password is required.</small>
+        <small *ngIf="password.errors?.['minlength']">Min 8 characters required.</small>
+      </div>
+  
+      <button type="submit" [disabled]="loginForm.invalid">LOGIN</button>
+    </form>
+  
+    <p>Don't have an account? <a routerLink="/signup">SignUp</a></p>
+  </div>
+  

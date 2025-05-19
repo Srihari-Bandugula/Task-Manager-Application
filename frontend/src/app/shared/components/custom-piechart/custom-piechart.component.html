@@ -1,0 +1,16 @@
+
+<ngx-charts-pie-chart
+  *ngIf="data?.length"
+  [results]="data"
+  [scheme]="colorScheme"
+  [customColors]="customColors"
+  [tooltipDisabled]="false"
+  [legend]="true"
+  [animations]="true"
+  [gradient]="false">
+</ngx-charts-pie-chart>
+
+<!-- Custom Legend -->
+<app-custom-legend [payload]="payload"></app-custom-legend>
+
+

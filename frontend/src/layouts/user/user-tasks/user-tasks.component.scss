@@ -1,0 +1,146 @@
+
+/* MyTasks Section */
+.my-5 {
+  margin-top: 1.25rem; /* 5 * 0.25rem */
+  margin-bottom: 1.25rem; /* 5 * 0.25rem */
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.lg\:flex-row {
+  flex-direction: row;
+}
+
+.lg\:items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+}
+
+.md\:text-xl {
+  font-size: 1.25rem; /* 20px */
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-4 {
+  gap: 1rem; /* 4 * 0.25rem */
+}
+
+.mt-4 {
+  margin-top: 1rem; /* 4 * 0.25rem */
+}
+
+.mt-5 {
+  margin-top: 1.25rem; /* 5 * 0.25rem */
+}
+
+.text-gray-400 {
+  color: rgba(156, 163, 175, 1);
+}
+
+.text-xs {
+  font-size: 0.75rem; /* 12px */
+}
+
+.md\:text-13px {
+  font-size: 13px;
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+}
+
+.card-btn {
+  padding: 0.5rem 1rem;
+  background-color: #f1f5f9;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sm\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.md\:grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gap-3 {
+  gap: 0.75rem; /* 3 * 0.25rem */
+}
+
+.md\:gap-6 {
+  gap: 1.5rem; /* 6 * 0.25rem */
+}
+
+.md\:col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.no-tasks-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff; /* White text */
+  background-color: #b0a2a1; /* Red color for the alert */
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: 60%; /* Set width to 60% of its container */
+  max-width: 500px; /* Max width to prevent it from growing too large */
+  margin: 20px auto; /* Center the alert horizontally and add vertical margin */
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  animation: fadeInAlert 0.5s ease-in-out;
+}
+
+.no-tasks-message p {
+  font-weight: bold;
+  margin: 0;
+}
+
+@keyframes fadeInAlert {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+

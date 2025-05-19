@@ -1,0 +1,38 @@
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card-btn {
+  background-color: #f3f4f6; /* Example background color */
+  border: 1px solid #d1d5db; /* Example border color */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card-btn:hover {
+  background-color: #e5e7eb; /* Example hover background color */
+}
+
+.card-btn-fill {
+  background-color: #3b82f6; /* Example fill color */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card-btn-fill:hover {
+  background-color: #2563eb; /* Example hover fill color */
+}
+
+.error-message {
+  color: #ef4444; /* Red color for error message */
+  font-size: 1rem;
+}

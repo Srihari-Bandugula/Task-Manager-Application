@@ -1,0 +1,165 @@
+/* General Padding and Margin */
+.p-4 {
+  padding: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Flexbox Layout */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Title Styles */
+h2 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.5rem;
+}
+
+/* Date Filter Styles */
+.date-filter {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.date-input {
+  width: 8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #D1D5DB; /* border-gray-300 */
+  border-radius: 9999px; /* rounded-full */
+  font-size: 1rem; /* text-base */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: #3B82F6; /* Blue border */
+  box-shadow: 0 0 0 2px #3B82F6; /* Blue ring effect */
+}
+
+/* Search Box Styles */
+input[type="text"] {
+  width: 100%;
+  padding-left: 3rem; /* for icon space */
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border: 1px solid #D1D5DB; /* border-gray-300 */
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+  font-size: 1rem; /* text-base */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: transparent;
+  box-shadow: 0 0 0 2px #3B82F6; /* Blue ring effect */
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: #9CA3AF; /* text-gray-400 */
+  font-size: 1.25rem; /* text-xl */
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+/* Modal and Task Card Layout */
+.relative {
+  position: relative;
+}
+
+.max-w-3xl {
+  max-width: 48rem; /* 768px */
+}
+
+/* Button Styles */
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles for Larger Screens */
+@media (min-width: 1024px) {
+  .lg\:ml-64 {
+    margin-left: 16rem; /* lg:ml-64 */
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+}

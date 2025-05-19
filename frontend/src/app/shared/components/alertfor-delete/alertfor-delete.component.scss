@@ -1,0 +1,28 @@
+/* Content Text */
+.content-text {
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* justify-end */
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+/* Delete Button */
+.delete-button {
+  display: flex;
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  gap: 0.375rem; /* gap-1.5 */
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+  color: #e11d48; /* text-rose-500 */
+  white-space: nowrap; /* whitespace-nowrap */
+  background-color: #fee2e2; /* bg-rose-50 */
+  border: 1px solid #fca5a5; /* border-rose-100 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  cursor: pointer; /* cursor-pointer */
+}

@@ -1,0 +1,14 @@
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem; 
+}
+
+.task-details p {
+  margin: 0;
+}
+
+.task-details strong {
+  font-weight: bold;
+}

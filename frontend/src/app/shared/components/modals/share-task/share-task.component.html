@@ -1,0 +1,16 @@
+<app-modal [isOpen]="isOpen" (close)="onClose.emit()" title="Share Task with Users">
+  <ng-container *ngIf="taskId">
+    <app-select-users
+      [selectedUsers]="selectedUserId"
+      (selectedUsersChange)="selectedUserId = $event">
+    </app-select-users>
+  
+    <div class="flex justify-end gap-4 mt-6">
+      <button class="card-btn" (click)="onClose.emit()">Cancel</button>
+      <button class="card-btn-fill" (click)="handleShare()">Share</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!taskId">
+    <p class="text-red-500">Invalid Task ID</p> <!-- Error message if taskId is null -->
+  </ng-container>
+</app-modal>

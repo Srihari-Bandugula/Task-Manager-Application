@@ -1,0 +1,45 @@
+<div>
+  <!-- Display existing attachments -->
+  <div *ngFor="let item of attachments; let i = index" class="attachment-item">
+    <div class="attachment-content">
+      <mat-icon color="accent">attach_file</mat-icon>
+      <p (click)="onLinkClick(item)">{{ item }}</p> <!-- Trigger navigation only when clicking on the link -->
+    </div>
+    <button mat-icon-button color="warn" (click)="handleDeleteOption(i)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <!-- Display individual link -->
+  <div *ngIf="link">
+    <div class="attachment-item">
+      <div class="attachment-content">
+        <mat-icon color="accent">attach_file</mat-icon>
+        <p (click)="onLinkClick(link)">{{ link }}</p> <!-- Trigger navigation only when clicking on the link -->
+      </div>
+      <button mat-icon-button color="warn" (click)="onLinkClick(link)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Input to add new attachment -->
+  <div class="attachment-input-group">
+    <div class="attachment-input">
+      <mat-icon color="accent">attach_file</mat-icon>
+      <input
+        matInput
+        placeholder="Add File Link"
+        [(ngModel)]="option"
+      />
+    </div>
+    <button
+      type="button"
+      mat-raised-button
+      color="primary"
+      (click)="handleAddOption()"
+    >
+      <mat-icon class="add-icon">add</mat-icon> Add
+    </button>
+  </div>
+</div>

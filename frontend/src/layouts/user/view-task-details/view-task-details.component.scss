@@ -1,0 +1,191 @@
+/* Main container to center everything horizontally */
+.mt-5 {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;      /* Center horizontally */
+  padding: 0 1rem;
+}
+
+/* Grid layout wrapper */
+.grid {
+  display: grid;
+  width: 100%;
+  max-width: 1000px;            /* Prevent full screen stretch */
+  grid-template-columns: 1fr;   /* Default: single column */
+  gap: 1.5rem;
+}
+
+/* On medium screens and up, use 4 columns */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Form card (main task detail panel) */
+.form-card {
+  grid-column: span 4;          /* Span all columns */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Flexbox for title and status */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Status tag styling */
+.text-11px {
+  font-size: 13px;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #e0e0e0;
+  color: #374151;
+  letter-spacing: 0.5px;
+}
+
+.text-cyan-500 {
+  background-color: #e0f7fa;
+  color: #0891b2;
+}
+
+.text-lime-500 {
+  background-color: #ecfccb;
+  color: #65a30d;
+}
+
+.text-violet-500 {
+  background-color: #ede9fe;
+  color: #7c3aed;
+}
+
+/* Info card block */
+.app-info-card {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.app-info-card label {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.app-info-card .value {
+  font-size: 15px;
+  color: #1e293b;
+  margin-top: 0.5rem;
+}
+
+/* Avatar list */
+.app-avatars {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.app-avatars img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #e2e8f0;
+}
+
+/* Todo checklist */
+.app-todo-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-todo-list input {
+  margin-right: 0.75rem;
+  accent-color: #0ea5e9;
+}
+
+.app-todo-list label {
+  font-size: 14px;
+  color: #475569;
+}
+
+/* Attachments */
+.app-attachments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.app-attachments a {
+  text-decoration: none;
+  color: #0284c7;
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.app-attachments a:hover {
+  background-color: #e0f2fe;
+}
+
+/* Small text & label */
+.text-xs {
+  font-size: 12px;
+}
+
+.text-slate-500 {
+  color: #64748b;
+}
+
+/* Margin spacing */
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 1.25rem;
+  }
+
+  .text-11px {
+    font-size: 12px;
+  }
+}
+
+/* Specifically target labels in app-info-card, avatars, todo list, and attachments */
+.app-info-card label,
+.app-avatars label,
+.app-todo-list label,
+.app-attachments label,
+.text-xs {
+  font-weight: 600;  /* Make them bold */
+}

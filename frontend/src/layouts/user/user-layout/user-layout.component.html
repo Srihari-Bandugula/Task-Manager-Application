@@ -1,0 +1,54 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Left side: Task Manager logo -->
+  <span class="logo">Task Manager</span>
+
+  <!-- Spacer: takes up remaining space to push the buttons to the right -->
+  <span class="spacer"></span>
+
+  <!-- Right side: Dashboard and My Tasks buttons, Profile toggle -->
+  <div class="right-buttons">
+    <button mat-button (click)="navigate('dashboard')">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <button mat-button (click)="navigate('my-tasks')">
+      <mat-icon>assignment</mat-icon>
+      <span>My Tasks</span>
+    </button>
+
+    <button mat-icon-button (click)="toggleProfile()">
+      <img *ngIf="userData?.profileImageUrl" 
+           [src]="userData.profileImageUrl" 
+           alt="Profile Image" 
+           class="profile-image-button" />
+      <mat-icon *ngIf="!userData?.profileImageUrl">account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- Profile Details Card -->
+<mat-card *ngIf="showProfile" class="profile-card">
+  <mat-card-header>
+    <div mat-card-avatar class="profile-avatar" (click)="toggleImageSize()">
+      <mat-icon *ngIf="!userData?.profileImageUrl" class="avatar-icon">account_circle</mat-icon>
+      <img *ngIf="userData?.profileImageUrl" [src]="userData.profileImageUrl" alt="Profile Image" 
+           [class.enlarged]="isImageEnlarged" class="profile-image" />
+    </div>
+    <mat-card-title>{{ userData.name }}</mat-card-title>
+    <mat-card-subtitle>{{ userData.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Email:</strong> {{ userData.email }}</p>
+    <p><strong>Role:</strong> {{ userData.role }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="toggleProfile()">Close</button>
+    <button mat-button (click)="logout()" style="background-color: red;color: white;">Log out</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Routed Views -->
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

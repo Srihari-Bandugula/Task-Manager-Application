@@ -1,0 +1,15 @@
+<ng-container *ngIf="infoCard;else notForDashboard">
+  <div class="info-card">
+  <div class="circle" [ngStyle]="{ 'background-color': color }"></div>
+  <p class="info-text">
+    <span class="value">{{ value }}</span>
+    {{ label }}
+  </p>
+</div>
+</ng-container>
+<ng-template #notForDashboard>
+     <div class="p-4 rounded-xl shadow bg-white text-center" [ngClass]="color">
+      <div class="text-lg font-semibold mb-1">{{ label }}</div>
+      <div class="text-2xl font-bold">{{ value }}</div>
+    </div>
+</ng-template>

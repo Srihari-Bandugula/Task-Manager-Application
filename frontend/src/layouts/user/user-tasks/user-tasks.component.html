@@ -1,0 +1,23 @@
+<app-modal
+  [isOpen]="detailsModalOpen"
+  [title]="'Task Details'"
+  (closeModal)="closeModal()">
+  <div *ngIf="selectedTaskDetails">
+    <h4>{{ selectedTaskDetails.name }}</h4>
+    <p>{{ selectedTaskDetails.description }}</p>
+    <!-- Add more task details here as required -->
+  </div>
+</app-modal>
+
+<!-- Task list -->
+<div *ngIf="allTasks.length === 0" class="no-tasks-message">
+  <p>No tasks have been assigned to you yet ! </p><p> Please reach out to the admin for task allocation.</p>
+</div>
+
+<div *ngFor="let task of allTasks">
+  <app-task-card
+    [task]="task"
+    [users]="users"
+    (click)="handleTaskClick(task._id)">
+  </app-task-card>
+</div>

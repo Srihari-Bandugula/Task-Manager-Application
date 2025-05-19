@@ -1,0 +1,35 @@
+.status-card {
+  flex: 1;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 4px 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Status color styles */
+.status-pending {
+  background-color: #fff7e6;
+  color: #d97706;
+}
+
+.status-in-progress {
+  background-color: #fef9c3;
+  color: #ca8a04;
+}
+
+.status-completed {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.status-default {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Span count */
+.count {
+  font-size: 12px;
+  font-weight: 600;
+}

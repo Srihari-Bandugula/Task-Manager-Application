@@ -1,0 +1,79 @@
+
+<div class="card my-5">
+  <div>
+    <div class="col-span-3">
+      <h2 class="text-xl md:text-2xl">{{ greeting }}, {{ user?.name }}!</h2>
+      <p class="text-xs md:text-[13px] text-gray-400 mt-1.5">{{ formatDate() }}</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-5">
+    <app-info-card
+      label="Total Tasks"
+      [value]="formatNumber(dashboardData?.charts?.taskDistribution?.All)"
+      color="bg-primary"
+    ></app-info-card>
+
+    <app-info-card
+      label="Pending Tasks"
+      [value]="formatNumber(dashboardData?.charts?.taskDistribution?.Pending)"
+      color="bg-violet-500"
+    ></app-info-card>
+
+    <app-info-card
+      label="In Progress Tasks"
+      [value]="formatNumber(dashboardData?.charts?.taskDistribution?.InProgress)"
+      color="bg-cyan-500"
+    ></app-info-card>
+
+    <app-info-card
+      label="Completed Tasks"
+      [value]="formatNumber(dashboardData?.charts?.taskDistribution?.Completed)"
+      color="bg-lime-500"
+    ></app-info-card>
+  </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-4 md:my-6">
+  <div>
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h5 class="font-medium">Task Distribution</h5>
+      </div>
+
+      <app-custom-piechart
+        [data]="pieChartData"
+        [colors]="['#8D51FF', '#00B8D8', '#7BCE00','#FF69B4']"
+      ></app-custom-piechart>
+      <!-- <app-custom-piechart
+        [data]="[{name:'Pending',value:4},{name:'All',value:4},{name:'InProgress',value:4},{name:'Completed',value:4}]"
+        [colors]="['#8D51FF', '#00B8D8', '#7BCE00','#FF69B4']"
+      ></app-custom-piechart> -->
+    </div>
+  </div>
+
+  <div>
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h5 class="font-medium">Task Priority Levels</h5>
+      </div>
+
+      <app-custom-barchart [data]="barChartData"></app-custom-barchart>
+    </div>
+  </div>
+
+  <div class="md:col-span-2">
+    <div class="card">
+      <div class="flex items-center justify-between">
+        <h5 class="text-lg">Recent Tasks</h5>
+        <button mat-button (click)="onSeeMore()">
+          See All
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+      
+
+      <app-task-list [tableData]="dashboardData?.recentTasks || []"></app-task-list>
+    </div>
+  </div>
+</div>

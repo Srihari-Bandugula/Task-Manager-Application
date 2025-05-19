@@ -1,0 +1,129 @@
+/* Avatar group styling */
+.avatar-group {
+  display: flex;
+  gap: 8px; /* Space between avatars */
+  align-items: center;
+  justify-content: flex-start; /* Align avatars to the left */
+}
+
+/* Styling for individual avatars */
+.p-avatar {
+  border: 2px solid #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure image inside p-avatar fills and fits */
+.p-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Styling for mat-icon fallback inside avatar */
+.p-avatar .mat-icon {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  background-color: #6c757d; /* Optional fallback background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Styling for the label avatar when more than maxVisible */
+.p-avatar-label {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+/* Tooltip base styling */
+.p-tooltip {
+  font-size: 13px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  max-width: 200px;
+  word-wrap: break-word;
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Visible tooltip animation */
+.p-tooltip.p-tooltip-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Tooltip arrows for different positions */
+.p-tooltip-top::after,
+.p-tooltip-bottom::after,
+.p-tooltip-left::after,
+.p-tooltip-right::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.p-tooltip-top::after {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-color: #333 transparent transparent transparent;
+}
+
+.p-tooltip-bottom::after {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent #333 transparent;
+}
+
+.p-tooltip-left::after {
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent #333;
+}
+
+.p-tooltip-right::after {
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 6px 6px 0;
+  border-color: transparent #333 transparent transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .p-tooltip {
+    max-width: 150px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,25 @@
+<p-avatarGroup styleClass="avatar-group">
+  <!-- Loop through avatars and use profileImageUrl or fallback to mat-icon -->
+  <p-avatar
+    *ngFor="let user of avatars.slice(0, maxVisible)"
+    [size]="'large'"
+    [shape]="'circle'"
+    [pTooltip]="user.name"
+    [tooltipPosition]="'bottom'">
+    <!-- Display image if available, otherwise display mat-icon -->
+    <ng-container *ngIf="user.profileImageUrl; else iconTemplate">
+      <img [src]="user.profileImageUrl" alt="{{ user.name }}">
+    </ng-container>
+    <ng-template #iconTemplate>
+      <mat-icon>{{ getInitials(user.name) }}</mat-icon> <!-- Fallback to initials as icon -->
+    </ng-template>
+  </p-avatar>
+
+  <!-- Fallback avatar with label if more than maxVisible -->
+  <p-avatar
+    *ngIf="avatars.length > maxVisible"
+    [label]="'+' + (avatars.length - maxVisible)"
+    [size]="'large'"
+    [shape]="'circle'">
+  </p-avatar>
+</p-avatarGroup>

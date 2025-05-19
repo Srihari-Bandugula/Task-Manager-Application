@@ -1,0 +1,78 @@
+<div class="p-4 lg:ml-64">
+  <div class="my-5">
+    <div class="mt-4 flex justify-start w-full" *ngIf="tabs?.[0]?.count > 0">
+      <app-task-status-tab
+        class="max-w-full"
+        [tabs]="tabs"
+        [activeTab]="filterStatus"
+        (tabChange)="setFilterStatus($event)"
+      ></app-task-status-tab>
+    </div>
+  <!-- Filters Row -->
+<div class="flex flex-wrap gap-4 mt-4 items-center">
+
+  <!-- Start Date -->
+  <mat-form-field appearance="outline" class="w-40">
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" (dateChange)="filterTasks()" />
+    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- End Date -->
+  <mat-form-field appearance="outline" class="w-40">
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" (dateChange)="filterTasks()" />
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+  </mat-form-field>
+
+  <!-- Search Field -->
+  <mat-form-field appearance="outline" class="flex-1 min-w-[200px]">
+    <mat-label>Search Tasks</mat-label>
+    <input matInput placeholder="Search tasks..." [(ngModel)]="searchQuery" (input)="filterTasks()" />
+    <mat-icon matSuffix>🔍 &nbsp;</mat-icon>
+  </mat-form-field>
+
+</div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <app-task-card
+        *ngFor="let task of filteredTasks"
+        [task]="task"
+        [users]="users"
+        [isAdmin]="true"
+        (onClick)="viewTaskDetails(task)"
+        (onShareClick)="shareTask(task._id)"
+        (onEditClick)="editTask($event)"
+        (onDeleteClick)="deleteTask(task._id)"
+      >
+      </app-task-card>
+    </div>
+  </div>
+
+  <app-modal
+    [isOpen]="openDeleteAlert"
+    (onClose)="openDeleteAlert = false"
+    title="Delete Task"
+  >
+    <app-alertfor-delete
+      content="Are you sure you want to delete this task?"
+      (onDelete)="confirmDelete()"
+    ></app-alertfor-delete>
+  </app-modal>
+
+  <app-share-task
+    [taskId]="selectedTaskId"
+    [users]="users"
+    [isOpen]="shareModalOpen"
+    (onClose)="closeShareModal()"
+  ></app-share-task>
+  <app-task-details
+    [task]="selectedTaskDetails"
+    [users]="users"
+    [isOpen]="detailsModalOpen"
+    (onClose)="detailsModalOpen = false"
+  ></app-task-details>
+</div>

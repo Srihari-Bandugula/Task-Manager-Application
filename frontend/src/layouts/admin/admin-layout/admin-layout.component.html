@@ -1,0 +1,66 @@
+<mat-toolbar color="primary" class="navbar">
+    <span class="logo">Task Manager</span>
+  
+    <span class="spacer"></span>
+  
+    <button mat-button (click)="navigate('dashboard')">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+  
+    <button mat-button (click)="navigate('manage-tasks')">
+      <mat-icon>list_alt</mat-icon>
+      <span>Manage Tasks</span>
+    </button>
+  
+    <button mat-button (click)="navigate('create-task')">
+      <mat-icon>add_task</mat-icon>
+      <span>Create Task</span>
+    </button>
+  
+    <button mat-button (click)="navigate('team-members')">
+      <mat-icon>group</mat-icon>
+      <span>Team Members</span>
+    </button>
+  
+    <button mat-icon-button (click)="toggleProfile()">
+      <img *ngIf="userData?.profileImageUrl" 
+           [src]="userData.profileImageUrl" 
+           alt="Profile Image" 
+           class="profile-image-button" />
+      <mat-icon *ngIf="!userData?.profileImageUrl">account_circle</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <!-- Profile Details Card -->
+  <mat-card *ngIf="showProfile" class="profile-card">
+    <mat-card-header>
+      <div mat-card-avatar class="profile-avatar" (click)="toggleImageSize()">
+      <mat-icon *ngIf="!userData?.profileImageUrl" class="avatar-icon">account_circle</mat-icon>
+      <img *ngIf="userData?.profileImageUrl" [src]="userData.profileImageUrl" alt="Profile Image" 
+           [class.enlarged]="isImageEnlarged" class="profile-image" />
+    </div>
+      <mat-card-title>
+        {{ userData.name }}
+        <mat-chip  color="accent" selected class="admin-chip" style="background-color: green">
+          Admin
+        </mat-chip>
+      </mat-card-title>
+      <mat-card-subtitle>{{ userData.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Email:</strong> {{ userData.email }}</p>
+      <p><strong>Role:</strong> {{ userData.role }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn" (click)="toggleProfile()">Close</button>
+      <button mat-button (click)="logout()" style="background-color: red;color: white;">log out</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  
+  <!-- Routed Views -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  
