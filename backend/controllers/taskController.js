@@ -375,7 +375,7 @@ const shareTask = async (req, res) => {
 };
 
 
-// @desc Dashboard data(Admin only)
+// @desc Dashboard data
 // @route GET /api/tasks/user-dashboard-data
 // @access Private
 const getUserDashboardData = async(req,res) =>{

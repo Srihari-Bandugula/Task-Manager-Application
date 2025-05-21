@@ -40,20 +40,6 @@ const getUsers = async(req,res) =>{
         res.status(500).json({message:"Server error",error:error.message});
     }
 };
-
-// @desc GET all using ID
-// @route GET /api/users/:id
-// @access Private
-const getUserById = async(req,res) =>{
-    try{
-        const user= await User.findById(req.params.id).select("-password");
-        if(!user) return res.status(404).json({message:"User not Found"})
-        res.json(user);
-    }catch(error)
-    {
-        res.status(500).json({message:"Server error",error:error.message});
-    }
-};
     
 
-module.exports = {getUsers, getUserById};
+module.exports = {getUsers}; 

@@ -85,32 +85,6 @@ router.post("/login", loginUser);
  */
 router.get("/profile", protect, getUserProfile);
 
-/**
- * @swagger
- * /api/auth/profile:
- *   put:
- *     summary: Update user profile
- *     tags: [Auth]
- *     security:
- *       - bearerAuth: []
- *     requestBody:
- *       required: false
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *     responses:
- *       200:
- *         description: User profile updated
- *       401:
- *         description: Unauthorized
- */
-router.put("/profile", protect, updateUserProfile);
 
 /**
  * @swagger

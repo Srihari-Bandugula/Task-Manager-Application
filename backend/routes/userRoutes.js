@@ -28,30 +28,4 @@ const router = express.Router();
  *         description: Forbidden (not an admin)
  */
 router.get("/", protect, adminOnly, getUsers);
-
-/**
- * @swagger
- * /api/users/{id}:
- *   get:
- *     summary: Get a user by ID
- *     tags: [Users]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - name: id
- *         in: path
- *         required: true
- *         description: User ID
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: User data
- *       401:
- *         description: Unauthorized
- *       404:
- *         description: User not found
- */
-router.get("/:id", protect, getUserById);
-
 module.exports = router;
